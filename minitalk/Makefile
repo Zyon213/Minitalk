@@ -21,13 +21,13 @@ obj:
 liba: obj
 	$(AR) $(LIB) *.o
 server: liba
-	$(CC) $(FLAGS) $(SERVER) $(LIB) -o $(SRV)
+	$(CC) $(FLAGS) $(SERVER) -L. $(LIB) -o $(SRV)
 client: liba
-	$(CC) $(FLAGS) $(CLIENT) $(LIB) -o $(CLT)
+	$(CC) $(FLAGS) $(CLIENT) -L. $(LIB) -o $(CLT)
 server_b: liba
-	$(CC) $(FLAGS) $(SERVER_B) $(LIB) -o $(SRVB)
+	$(CC) $(FLAGS) $(SERVER_B) -L. $(LIB) -o $(SRVB)
 client_b: liba
-	$(CC) $(FLAGS) $(CLIENT_B) $(LIB) -o $(CLTB)
+	$(CC) $(FLAGS) $(CLIENT_B) -L. $(LIB) -o $(CLTB)
 clean:
 	$(RM) *.o
 clean_b:
